@@ -1,7 +1,8 @@
 doctype html
 html
-  head
-    title= title
-    link(rel='stylesheet', href='/stylesheets/style.css')
+  include ./includes/head
   body
-    block content
+    .container.p-0
+      include ./includes/nav
+      block content
+      include ./includes/scripts

@@ -1,5 +1,48 @@
 extends layout
 
 block content
-  h1= title
-  p Welcome to #{title}
+  #fullpage.bg-light
+    #background.section.active
+      div.border-gold
+      .row.justify-content-center.m-0(style='background: rgba(0,0,0,0.75)')
+        .col-lg-5.ml-auto.align-self-start
+          .text-center.py-5
+            img.img.mx-auto(src="/images/ifalogo.png" height='110' alt="alt")
+            small.d-block
+              strong.text-uppercase(style='color: #ccc') A ww2 total conversion mod for arma3
+        .col-lg-4.ml-auto.mr-auto.col-md-6.align-self-center
+          .trailer-box
+            #trailerCarousel.carousel.slide(data-ride='carousel')
+              .carousel-inner
+                .carousel-item.active
+                  a.trailer.d-flex.trailer-box(href="https://www.youtube.com/watch?v=h_9C0KUn9NY" target='_blank' style='text-decoration: none; color: white; background: url(../images/blitzkrieg.jpg); background-size: cover;')
+                    div.mx-auto.align-self-end
+                      .mx-auto.button-play
+                      div.py-0.px-2.mb-1.mt-4(style='background: rgba(0,0,0,0.75); border-radius: 10px; border: 1px solid #9f912a')
+                        small.align-self-center
+                          strong.text-uppercase Blitzkrieg Update
+                .carousel-item
+                  a.trailer.d-flex.trailer-box(href="https://www.youtube.com/watch?v=h_9C0KUn9NY" target='_blank' style='text-decoration: none; color: white; background: url(../images/dunkirk.jpg); background-size: cover;')
+                    div.mx-auto.align-self-end
+                      .mx-auto.button-play
+                      div.py-0.px-2.mb-1.mt-4(style='background: rgba(0,0,0,0.75); border-radius: 10px; border: 1px solid #9f912a')
+                        small.align-self-center
+                          strong.text-uppercase Dunkirk Teaser
+                .carousel-item
+                  a.trailer.d-flex.trailer-box(href="https://www.youtube.com/watch?v=M4Oc86rAK2Q" target='_blank' style='text-decoration: none; color: white; background: url(../images/airborne.jpg); background-size: cover;')
+                    div.mx-auto.align-self-end
+                      .mx-auto.button-play
+                      div.py-0.px-2.mb-1.mt-4(style='background: rgba(0,0,0,0.75); border-radius: 10px; border: 1px solid #9f912a')
+                        small.align-self-center
+                          strong.text-uppercase Airborne Update
+              a.carousel-control-prev(href='#trailerCarousel', role='button', data-slide='prev')
+                span.carousel-control-prev-icon(aria-hidden='true')
+                span.sr-only Previous
+              a.carousel-control-next(href='#trailerCarousel', role='button', data-slide='next')
+                span.carousel-control-next-icon(aria-hidden='true')
+                span.sr-only Next
+      div.border-gold
+    .section(style='background-color: #222')
+      h1.text-white Something something..
+    .section  
+      h1 Not sure what will go here
