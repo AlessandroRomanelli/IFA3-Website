@@ -72,4 +72,11 @@ $(document).ready(function() {
 		afterSlideLoad: function(anchorLink, index, slideAnchor, slideIndex){},
 		onSlideLeave: function(anchorLink, index, slideIndex, direction, nextSlideIndex){}
 	});
+	$('a.trailer video').hide();
+	$('a.trailer').hover(function() {
+		$(this).children('video').fadeIn(250);
+		$(this).children('video')[0].play()
+	},function() {
+		$(this).children('video').fadeOut(250).pause();
+	});
 });
