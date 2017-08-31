@@ -14,6 +14,31 @@ body::after {
   z-index: -1;
 }
 
+.social-links {
+  height: 40px;
+  position: absolute;
+  top: 0px;
+  right: 0px;
+  z-index: 1;
+}
+
+.social-links ul > li {
+  display: inline;
+}
+
+.social-links ul > li > a > img {
+  opacity: 0.5;
+  transition: all 0.25s ease-in-out;
+  z-index: 0
+}
+
+.social-links ul > li > a:hover > img {
+  opacity: 1;
+  transform: scale(1.1);
+  cursor: pointer;
+  z-index: 10;
+}
+
 a.trailer > div > .button-play {
   color: inherit;
   transition: all 0.25s ease-in-out;
@@ -24,10 +49,6 @@ a.trailer:hover > div > .button-play {
   color: inherit;
   transform: scale(1.05);
   background-color: rgba(0,0,0,0.75);
-}
-
-a.navbar-link.outline-link:link {
-  color: red !important;
 }
 
 .sliding-u-l-r {
@@ -91,9 +112,24 @@ a.navbar-link.outline-link:link {
 }
 
 #background {
-  position: relative;
-  background: url(../images/action.jpg) no-repeat 20% 80%;
+  position: absolute;
+  height: 100vh;
+  top: 0;
+  left: 0;
+  width: 100%;
+}
+
+#background::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: url(../images/action.jpg) no-repeat 50% 0% fixed;
   background-size: cover;
+  opacity: 0.5;
+  z-index: -1;
 }
 
 #background::after {
@@ -103,8 +139,9 @@ a.navbar-link.outline-link:link {
   left: 0;
   right: 0;
   bottom: 0;
-  background: linear-gradient(180deg, transparent 50%, #222 100%);
+  background: linear-gradient(180deg, #222 0%, transparent 10%, transparent 50%, #222 70%);
   pointer-events: none;
+  z-index: 0;
 }
 
 .trailer-box {

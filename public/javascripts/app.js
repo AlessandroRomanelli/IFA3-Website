@@ -46,7 +46,7 @@ $(document).ready(function() {
 
 		//Design
 		controlArrows: true,
-		verticalCentered: true,
+		verticalCentered: false,
 		sectionsColor : [],
 		paddingTop: '3em',
 		paddingBottom: '10px',
@@ -75,8 +75,9 @@ $(document).ready(function() {
 	$('a.trailer video').hide();
 	$('a.trailer').hover(function() {
 		$(this).children('video').fadeIn(250);
-		$(this).children('video')[0].play()
+		$(this).children('video')[0].play();
 	},function() {
-		$(this).children('video').fadeOut(250).pause();
+		$(this).children('video').fadeOut(250);
+		$(this).children('video')[0].pause();
 	});
 });
