@@ -14,6 +14,15 @@ body::after {
   z-index: -1;
 }
 
+nav.navbar {
+  border-bottom: 1px solid #333;
+  transition: 0.5s ease-in-out
+}
+
+nav.navbar:hover {
+  border-color: #999
+}
+
 img.shadow-filter {
   -webkit-filter: drop-shadow(0px 0px 7px rgba(255,0,0,1));
   filter: url(shadow.svg#drop-shadow);
@@ -41,19 +50,58 @@ img.shadow-filter {
   z-index: 1;
 }
 
-.social-links ul > li {
-  display: inline;
+.social-links a {
+  display: inline-block;
 }
 
-.social-links ul > li > a > img {
-  opacity: 0.5;
-  transition: all 0.25s ease-in-out;
-  z-index: 0
-}
-
-.social-links ul > li > a:hover > img {
+.social-links img {
   opacity: 1;
-  transform: scale(1.1);
+  z-index: 3;
+}
+
+.box {
+  opacity: 0.75;
+  position: relative;
+  display: inline-block;
+  transition: 0.5s;
+  border: 1px solid rgba(255,255,255,0);
+  -webkit-transition: 0.5s;
+}
+
+.box:hover {
+  opacity: 1;
+}
+
+.box::before, .box::after {
+  width: 100%;
+  height: 100%;
+  z-index: 3;
+  content:'';
+  position: absolute;
+  top:0;
+  left:0;
+  box-sizing: border-box;
+  -webkit-transform: scale(0);
+  transition: 0.5s;
+}
+
+.box::before {
+  border-bottom: 1px solid #FFF;
+  border-left: 1px solid #FFF;
+  -webkit-transform-origin: 0 100%;
+}
+
+.box::after {
+  border-top: 1px solid #FFF;
+  border-right: 1px solid #FFF;
+  -webkit-transform-origin: 100% 0%;
+}
+
+.box:hover::before, .box:hover::after {
+  -webkit-transform: scale(1);
+}
+
+.social-links a:hover img {
   cursor: pointer;
   z-index: 10;
 }
@@ -130,7 +178,7 @@ a.trailer:hover > div > .button-play {
               0 0 20px 20px rgba(0,0,0,0.25);
 }
 
-#background {
+.background {
   position: absolute;
   height: 100vh;
   top: 0;
@@ -138,30 +186,36 @@ a.trailer:hover > div > .button-play {
   width: 100%;
 }
 
-#background::before {
+.background::before {
   content: '';
   position: absolute;
   top: 0;
   left: 0;
   right: 0;
   bottom: 0;
-  background: url(../images/action.jpg) no-repeat 50% 50% fixed;
-  background-size: cover;
   opacity: 0.5;
   z-index: -1;
-  -webkit-filter: blur(3px)
+  -webkit-filter: blur(3px);
+  background-size: cover;
 }
 
-#background::after {
+.background::after {
   content: '';
   position: absolute;
   top: 0;
   left: 0;
   right: 0;
   bottom: 0;
-  background: linear-gradient(180deg, #222 0%, transparent 10%, transparent 50%, #222 80%);
   pointer-events: none;
   z-index: 0;
+}
+
+#firstPage-bg::before {
+  background: url(../images/action.jpg) no-repeat 50% 50% fixed;
+}
+
+#firstPage-bg::after {
+  background: linear-gradient(180deg, #222 0%, transparent 10%, transparent 50%, #222 80%);
 }
 
 .trailer-box {
@@ -210,8 +264,8 @@ a {
   src: url(../fonts/futura/FuturaPTMedium.otf);
 }
 @font-face {
-  font-family: 'Fty';
-  src: url(../fonts/Fty.ttf);
+  font-family: 'Futura Light';
+  src: url(../fonts/futura/FuturaPTLight.otf);
 }
 @font-face {
   font-family: 'Argent';
@@ -224,4 +278,8 @@ a {
 
 .futura {
   font-family: 'Futura';
+}
+
+.futura-light {
+  font-family: 'Futura Light';
 }
