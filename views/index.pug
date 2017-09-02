@@ -2,66 +2,52 @@ extends layout
 
 block content
   #fullpage(style='background-color: #151617')
-    .section.active.align-contents-end
+    .section.active.p-0
       #firstPage-bg.background
+      div.d-flex.align-items-center(style='height: 60vh; z-index: 1')
+        .text-center.mx-auto
+          img.img.mx-auto.shadow-filter(src="/images/ifalogo.png" width='500' alt="alt" style='-webkit-filter: drop-shadow(0px 0px 5px rgba(0,0,0,1))')
+          h3.d-block.text-uppercase.futura.subtitle
+            span More terrains. 
+            span More weapons. 
+            br
+            span More vehicles. 
+            span More fun.
       div.align-self-end(style='position: absolute; bottom: 10%;')
-        div(style='z-index: 1').my-5
-          .text-center
-            img.img.mx-auto.shadow-filter(src="/images/ifalogo.png" width='650' alt="alt" style='-webkit-filter: drop-shadow(0px 0px 5px rgba(0,0,0,1))')
-            h2.d-block.text-uppercase.futura.subtitle
-              span More terrains. 
-              span More weapons. 
-              br
-              span More vehicles. 
-              span More fun.
         div(style='z-index: 1;')
           div.border-gold
-          .row.justify-content-center.m-0.py-3(style='background: rgba(0,0,0,0.75)')
-            .col-lg-7.ml-auto.align-self-center
-              .text-white
-                h3.futura-light.text-uppercase From the beaches of D-Day to the snowy eastern front, fight your way through Europe
-                p.text-justify Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-            .col-lg-4.ml-auto.mr-auto.col-md-6.align-self-center.px-0
-              .trailer-box
-                #trailerCarousel.carousel.slide(data-ride='carousel')
-                  .carousel-inner
-                    .carousel-item.active
-                      a.trailer.d-flex.trailer-box(href="https://www.youtube.com/watch?v=h_9C0KUn9NY" target='_blank' style='text-decoration: none; color: white; background: url(../images/blitzkrieg.jpg); background-size: cover;')
-                        video(width='380' loop style='position: absolute; z-index: 0;')
-                          source(src='/video/blitzkrieg_preview.webm')
-                        div.mx-auto.align-self-end(style='z-index: 10')
-                          .mx-auto.button-play
-                          div.py-0.px-2.mb-1.mt-4(style='background: rgba(0,0,0,0.75); border-radius: 10px; border: 1px solid #9f912a')
-                            small.align-self-center
-                              strong.text-uppercase Blitzkrieg Update
-                    .carousel-item
-                      a.trailer.d-flex.trailer-box(href="https://www.youtube.com/watch?v=h_9C0KUn9NY" target='_blank' style='text-decoration: none; color: white; background: url(../images/dunkirk.jpg); background-size: cover;')
-                        video(width='380' loop style='position: absolute; z-index: 0;')
-                          source(src='/video/dunkirk_preview.webm')
-                        div.mx-auto.align-self-end(style='z-index: 10')
-                          .mx-auto.button-play
-                          div.py-0.px-2.mb-1.mt-4(style='background: rgba(0,0,0,0.75); border-radius: 10px; border: 1px solid #9f912a')
-                            small.align-self-center
-                              strong.text-uppercase Dunkirk Teaser
-                    .carousel-item
-                      a.trailer.d-flex.trailer-box(href="https://www.youtube.com/watch?v=M4Oc86rAK2Q" target='_blank' style='text-decoration: none; color: white; background: url(../images/airborne.jpg); background-size: cover;')
-                        video(width='380' loop style='position: absolute; z-index: 0;')
-                          source(src='/video/airborne_preview.webm')
-                        div.mx-auto.align-self-end(style='z-index: 10')
-                          .mx-auto.button-play
-                          div.py-0.px-2.mb-1.mt-4(style='background: rgba(0,0,0,0.75); border-radius: 10px; border: 1px solid #9f912a')
-                            small.align-self-center
-                              strong.text-uppercase Airborne Update
-                  a.carousel-control-prev(href='#trailerCarousel', role='button', data-slide='prev')
-                    span.carousel-control-prev-icon(aria-hidden='true')
-                    span.sr-only Previous
-                  a.carousel-control-next(href='#trailerCarousel', role='button', data-slide='next')
-                    span.carousel-control-next-icon(aria-hidden='true')
-                    span.sr-only Next
+          .row.align-items-center.justify-content-center.m-0.py-3(style='background: rgba(0,0,0,0.75)')
+            .col-4.ml-auto.mr-auto
+              a.trailer.d-flex.trailer-box(href="https://www.youtube.com/watch?v=h_9C0KUn9NY" target='_blank')
+                .overlay.box
+                img.img-fluid(src="../images/blitzkrieg.jpg", alt="alt" style='width: 100%; height: 100%; box-shadow: inset 0 -10px 0 0 red')
+                video(loop style='width: 100%; height: 100%; z-index: 0;')
+                  source(src='/video/blitzkrieg_preview.webm')
+                div.trailer-label.mx-auto.text-white.text-left(style='z-index: 10; width: 100%')
+                  h5.ml-3.futura.align-self-center.text-uppercase Blitzkrieg Update
+            .col-4.ml-auto.mr-auto
+              a.trailer.d-flex.trailer-box(href="https://www.youtube.com/watch?v=h_9C0KUn9NY" target='_blank')
+                .overlay.box
+                img.img-fluid(src="../images/dunkirk.jpg", alt="alt" style='width: 100%; height: 100%;')
+                video(loop style='width: 100%; height: 100%; z-index: 0;')
+                  source(src='/video/dunkirk_preview.webm')
+                div.trailer-label.mx-auto.text-white.text-left(style='z-index: 10; width: 100%')
+                  h5.ml-3.futura.align-self-center.text-uppercase Dunkirk Teaser
+            .col-4.ml-auto.mr-auto
+              a.trailer.d-flex.trailer-box(href="https://www.youtube.com/watch?v=M4Oc86rAK2Q" target='_blank')
+                .overlay.box
+                img.img-fluid(src="../images/airborne.png", alt="alt" style='width: 100%; height: 100%;')
+                video(loop style='width: 100%; height: 100%; z-index: 0;')
+                  source(src='/video/airborne_preview.webm')
+                div.trailer-label.mx-auto.text-white.text-left(style='z-index: 10; width: 100%')
+                  h5.ml-3.futura.text-uppercase Airborne Update
           div.border-gold
     .section(style='background-color: #222')
       #secondPage-bg.background
-      h1.text-white Something something..
+      div.border-gold
+      .display-4.text-center.futura.text-uppercase.text-white(style='background: rgba(0,0,0,0.75)') The factions
+      div.border-gold
+      
     .section  
       #thirdPage-bg.background
       h1 Not sure what will go here

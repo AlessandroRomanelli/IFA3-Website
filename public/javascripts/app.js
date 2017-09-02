@@ -73,11 +73,13 @@ $(document).ready(function() {
 		onSlideLeave: function(anchorLink, index, slideIndex, direction, nextSlideIndex){}
 	});
 	$('a.trailer video').hide();
-	$('a.trailer').hover(function() {
-		$(this).children('video').fadeIn(250);
+	$('.trailer-box').hover(function() {
+		$(this).children('img').hide();
+		$(this).children('video').show();
 		$(this).children('video')[0].play();
 	},function() {
-		$(this).children('video').fadeOut(250);
+		$(this).children('img').show();
+		$(this).children('video').hide();
 		$(this).children('video')[0].pause();
 	});
 });

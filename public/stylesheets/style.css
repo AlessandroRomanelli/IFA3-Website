@@ -20,7 +20,7 @@ nav.navbar {
 }
 
 nav.navbar:hover {
-  border-color: #999
+  border-color: #444
 }
 
 img.shadow-filter {
@@ -116,6 +116,11 @@ a.trailer:hover > div > .button-play {
   color: inherit;
   transform: scale(1.05);
   background-color: rgba(0,0,0,0.75);
+  border-color: rgba(255,255,255,0.75)
+}
+
+a.trailer-box:hover::after {
+  opacity: 0.5;
 }
 
 .sliding-u-l-r {
@@ -195,7 +200,7 @@ a.trailer:hover > div > .button-play {
   bottom: 0;
   opacity: 0.5;
   z-index: -1;
-  -webkit-filter: blur(3px);
+  -webkit-filter: blur(2px);
   background-size: cover;
 }
 
@@ -218,13 +223,65 @@ a.trailer:hover > div > .button-play {
   background: linear-gradient(180deg, #222 0%, transparent 10%, transparent 50%, #222 80%);
 }
 
-.trailer-box {
+.overlay {
   width: 100%;
-  height: 175px;
+  height: 100%;
+  background: linear-gradient(0deg, black 0%, transparent 75%);
+  z-index: 5;
+  opacity: 1;
+  transition: all 0.5s ease-in-out;
+  background-size: 100% 200%;
+}
+
+.overlay:hover {
+  background-position: 400px;
+}
+
+.trailer-box {
+  position: relative;
+  width: 100%;
   border: 1px solid rgba(255,255,255,0.1);
   color: #ddd;
-  box-shadow: inset 0 0 20px 10px rgba(0,0,0,0.5);
 }
+
+.trailer-box::after {
+  width: 100%;
+  height: 100%;
+  background-color: black;
+}
+
+.trailer {
+  position: relative;
+}
+
+.trailer > div {
+  position: absolute;
+}
+
+.trailer > div.trailer-label {
+  position: absolute;
+  bottom: 0;
+  text-shadow: 1px 1px 0 #333,
+               1px 0px 0 #333,
+               1px -1px 0 #333,
+               0px 1px 0 #333,
+               0px -1px 0 #333,
+               -1px 1px 0 #333,
+               -1px 0px 0 #333,
+               -1px -1px 0 #333;
+  transition: 0.25s ease-in-out;
+}
+
+.trailer:hover > div.trailer-label {
+  transform: translateY(-10px);
+}
+
+a.trailer:link,
+a.trailer:visited
+a.trailer:hover {
+  color: white;
+}
+
 
 .button-play {
   position: relative;
@@ -232,7 +289,7 @@ a.trailer:hover > div > .button-play {
   height: 75px;
   width: 75px;
   background-color: rgba(0,0,0,0.33);
-  border: 3px solid #9f912a;
+  border: 3px solid rgba(0,0,0,0.55);
 }
 
 .button-play::after {
