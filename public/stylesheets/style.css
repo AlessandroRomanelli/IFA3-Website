@@ -1,4 +1,5 @@
 body {
+  position: relative;
   background: url(../images/background.jpg) no-repeat center;
   background-size: cover;
 }
@@ -178,7 +179,7 @@ a.trailer-box:hover::after {
   background-color: #151617 !important;
 }
 
-.container {
+body > .container {
   box-shadow: 0 0 10px 5px rgba(0,0,0,0.5),
               0 0 20px 20px rgba(0,0,0,0.25);
 }
@@ -186,8 +187,6 @@ a.trailer-box:hover::after {
 .background {
   position: absolute;
   height: 100vh;
-  top: 0;
-  left: 0;
   width: 100%;
 }
 
@@ -221,6 +220,24 @@ a.trailer-box:hover::after {
 
 #firstPage-bg::after {
   background: linear-gradient(180deg, #222 0%, transparent 10%, transparent 50%, #222 80%);
+}
+
+#secondPage-bg::before {
+  background: url(../images/ruins.jpg) no-repeat 50% 50%;
+  background-size: cover;
+}
+
+#secondPage-bg::after {
+  background: linear-gradient(180deg, #222 5%, transparent 10%, transparent 85%, #222 95%);
+  z-index: -1;
+}
+
+.right-shadow {
+  background: linear-gradient(270deg, #111 0%, transparent 20%)
+}
+
+.left-shadow {
+  background: linear-gradient(90deg, #111 0%, transparent 20%)
 }
 
 .overlay {
